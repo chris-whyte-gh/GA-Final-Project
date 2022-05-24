@@ -7,13 +7,24 @@ export default function dadJokes({ setapiResponse, setapiType }) {
         onClick={async (e) => {
           e.preventDefault();
           setapiType("dadJokes")
+
+          {/* Headers specify we are receiving JSON */}
+        try {
           const response = await fetch('http://icanhazdadjoke.com', {
+            method: 'GET',
             headers: { Accept: 'application/json' },
           });
+
+          if (!response.ok) {
+            throw new Error(`There was an error: ${response.status}`);
+          }
 
           const data = await response.json();
           console.log(data);
           setapiResponse(data.joke);
+          } catch (err) {
+            console.log(err);
+          }
         }}
       >
         Dad Joke
