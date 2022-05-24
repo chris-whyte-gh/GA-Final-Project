@@ -10,7 +10,7 @@ export default function dadJokes({ setapiResponse, setapiType }) {
 
           {/* Headers specify we are receiving JSON */}
         try {
-          const response = await fetch('http://icanhazdadjoke.com', {
+          const response = await fetch('https://icanhazdadjoke.com', {
             method: 'GET',
             headers: { Accept: 'application/json' },
           });
