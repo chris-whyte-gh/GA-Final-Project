@@ -129,20 +129,3 @@ export default function hikes({
     </>
   );
 }
-
-function getStaticProps() {
-   return {
-  props: {
-       secret: process.env.HIKES_API_KEY
-  }
- }
-}
-
-export async function getServerSideProps() {
-  console.log(process.env.HIKES_API_KEY);
-  return {
-    props: {
-      hello: 'world',
-    },
-  };
-}

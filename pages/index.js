@@ -7,7 +7,6 @@ import Dad_jokes from '../components/dad_jokes'
 import ReactAudioPlayer from 'react-audio-player';
 
 export default function Home() {
-  console.log(process.env.NEXT_PUBLIC_HIKES_API_KEY);
   // Destructuring the api response to use useState. This allows us to access and change variables
   const [apiResponse, setapiResponse] = useState(null)
   // So we know which api is called when the button is clicked.
