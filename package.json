@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "firebase": "^9.8.1",
+    "next": "latest",
+    "react": "17.0.2",
+    "react-audio-player": "^0.17.0",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
