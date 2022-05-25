@@ -87,13 +87,21 @@ export default function hikes({
 
           let masterArray = [];
 
-          {/* I set this to 4 because my api was always failing when calling all the hikes */}
-          for (let i = 0; i < 4; i++) {
+          for (let i = 0; i < activitiesObject.data.length; i++) {
             let activityName = activitiesObject.data[i].fullName;
             let description = activitiesObject.data[i].description;
-            let images = activitiesObject.data[i].images;
-            let imagesArray = images[i].url;
-
+            {/* Check if they exist, return undefined if they don't exist */}
+            let imagesArray = activitiesObject?.data[i]?.images[0]?.url;
+            if (i % 2) {
+              imagesArray = undefined;
+            }
+            {/* let imagesArray;
+            if (!image) {
+              imagesArray = undefined;
+            } else {
+              imagesArray = image?.url;
+            } */}
+            console.log(imagesArray);
             //ES6 creates object with these as keys, and values as variable names
             masterArray.push({ activityName, description, imagesArray });
           }

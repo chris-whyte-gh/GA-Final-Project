@@ -56,9 +56,13 @@ export default function Home() {
               <div key={hike.activityName}>
                 <h2>{hike.activityName}</h2>
                 <p>{hike.description}</p>
-                <img src={hike.imagesArray} width="150px"></img>
+                {hike?.imagesArray ? (
+                  <img src={hike.imagesArray} width="150px"></img>
+                ) : (
+                  ''
+                )}
               </div>
-            )
+            );
             })
           ) : (<>Could Not Load Page</>)}
         </>
