@@ -45,7 +45,10 @@ export default function Home() {
         <>
           {/* This will sometimes error because index.js loads before the api is called */}
           <h2>Hikes in your state</h2>
-          {apiResponse.map((hike) => {
+          {
+            Array.isArray(apiResponse) && apiResponse.length > 0 ? (
+
+            apiResponse.map((hike) => {
             {
               /* Adding a unique key because we're creating a new item through our map function, and this is how the shadow DOM knows divs are unique */
             }
@@ -56,7 +59,8 @@ export default function Home() {
                 <img src={hike.imagesArray} width="150px"></img>
               </div>
             )
-          })}
+            })
+          ) : (<>Could Not Load Page</>)}
         </>
       );
     } else {
