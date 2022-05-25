@@ -77,23 +77,13 @@ export default function hikes({
         onClick={async (e) => {
           e.preventDefault();
           setapiType('hikes');
-          //store this in an environmental variable
           const apikey = process.env.NEXT_PUBLIC_HIKES_API_KEY;
           const response = await fetch(
-            `https://developer.nps.gov/api/v1/parks?stateCode=${state}&api_key=${apikey}`,
-          );
+            `https://developer.nps.gov/api/v1/parks?stateCode=${state}&api_key=${apikey}`,);
 
-          const activitiesObject = await response.json();
-
-          {
-            /* Alternative way is to map through array (avoids creating masterArray) */
-          }
+            const activitiesObject = await response.json();
+          {/* Alternative way is to map through array (avoids creating masterArray) */}
           //Loop through the fullName, description, and images of the array
-          {
-            /* data.data.forEach(element => {
-          console.log(element.fullName, element.description, element.images);
-        }); */
-          }
 
           let masterArray = [];
 
